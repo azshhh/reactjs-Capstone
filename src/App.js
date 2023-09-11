@@ -1,4 +1,4 @@
-import "./App.css";
+import "./categories.styles.scss";
 
 const App = () => {
   const categories = [
@@ -14,8 +14,10 @@ const App = () => {
         <div className="categories-container">
           <div className="category-container">
             {/* <img src="" alt="" /> */}
-            <h2>{title}</h2>
-            <p>Shop Now</p>
+            <div className="category-body-container">
+              <h2>{title}</h2>
+              <p>Shop Now</p>
+            </div>
           </div>
         </div>
       ))}
