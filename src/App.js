@@ -1,43 +1,24 @@
 import "./App.css";
 
 const App = () => {
+  const categories = [
+    {
+      id: 1,
+      title: "Hats",
+    },
+  ];
+
   return (
     <div className="App">
-      <div className="categories-container">
-        <div className="category-container">
-          {/* <img src="" alt="" /> */}
-          <h2>Hats</h2>
-          <p>Shop Now</p>
+      {categories.map(({ title }) => (
+        <div className="categories-container">
+          <div className="category-container">
+            {/* <img src="" alt="" /> */}
+            <h2>{title}</h2>
+            <p>Shop Now</p>
+          </div>
         </div>
-      </div>
-      <div className="categories-container">
-        <div className="category-container">
-          {/* <img src="" alt="" /> */}
-          <h2>Jackets</h2>
-          <p>Shop Now</p>
-        </div>
-      </div>
-      <div className="categories-container">
-        <div className="category-container">
-          {/* <img src="" alt="" /> */}
-          <h2>Sneakers</h2>
-          <p>Shop Now</p>
-        </div>
-      </div>
-      <div className="categories-container">
-        <div className="category-container">
-          {/* <img src="" alt="" /> */}
-          <h2>Mens</h2>
-          <p>Shop Now</p>
-        </div>
-      </div>
-      <div className="categories-container">
-        <div className="category-container">
-          {/* <img src="" alt="" /> */}
-          <h2>Womens</h2>
-          <p>Shop Now</p>
-        </div>
-      </div>
+      ))}
     </div>
   );
 };
