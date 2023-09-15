@@ -1,5 +1,6 @@
 import { useState } from "react";
 import FormInput from "../form-input/form-input.component";
+import "./sign-up-form.styles.scss";
 import {
   createAuthUserWithEmailAndPassword,
   createUserDocumentFromAuth,
@@ -50,19 +51,21 @@ const SignUpForm = () => {
   };
 
   return (
-    <div>
-      <h1>SignUp with email and password</h1>
+    <div className="sign-up-container">
+      <h2>SignUp with email and password</h2>
       <form onSubmit={handleSubmit}>
         <FormInput
           label="Name"
-          type="text"
-          required
-          onChange={handleChange}
-          name="displayName"
-          value={displayName}
+          inputOptions={{
+            type: "text",
+            required: true,
+            onChange: handleChange,
+            name: "displayName",
+            value: displayName,
+          }}
         />
 
-        <FormInput
+        {/* <FormInput
           label="Email"
           type="email"
           required
@@ -90,7 +93,7 @@ const SignUpForm = () => {
           name="confirmPassword"
           value={confirmPassword}
           autoComplete="new-password"
-        />
+        /> */}
 
         <button type="subimit">Sign Up</button>
       </form>
