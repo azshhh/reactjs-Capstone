@@ -15,6 +15,10 @@ const SignUpForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { displayName, email, password, confirmPassword } = formFields;
 
+  const resetFormFields = () => {
+    setFormFields(defaultFormFields);
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (password !== confirmPassword) {
@@ -27,8 +31,9 @@ const SignUpForm = () => {
         password
       );
       // We have created a User with email and password, but now create document for that user in db
-      await createUserDocumentFromAuth(user);
+      await createUserDocumentFromAuth(user, { displayName });
       alert("User successfully created");
+      resetFormFields();
     } catch (error) {
       if (error.code === "auth/email-already-in-use") {
         alert("Email already registered, please try with diffrent email.");
