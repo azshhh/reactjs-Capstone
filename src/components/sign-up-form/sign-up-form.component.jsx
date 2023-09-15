@@ -1,6 +1,7 @@
 import { useState } from "react";
 import FormInput from "../form-input/form-input.component";
 import "./sign-up-form.styles.scss";
+import Button from "../button/button.component";
 import {
   createAuthUserWithEmailAndPassword,
   createUserDocumentFromAuth,
@@ -90,7 +91,7 @@ const SignUpForm = () => {
           value={confirmPassword}
           autoComplete="new-password"
         />
-        <button type="subimit">Sign Up</button>
+        <Button type="subimit">Sign Up</Button>
       </form>
     </div>
   );
