@@ -28,9 +28,13 @@ const SignUpForm = () => {
       );
       // We have created a User with email and password, but now create document for that user in db
       await createUserDocumentFromAuth(user);
-      alert("User created");
+      alert("User successfully created");
     } catch (error) {
-      console.error("User creation encountered an error.", error);
+      if (error.code === "auth/email-already-in-use") {
+        alert("Email already registered, please try with diffrent email.");
+      } else {
+        console.log("User creation encountered an error.", error);
+      }
     }
   };
 
