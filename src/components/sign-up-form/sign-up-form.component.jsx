@@ -56,16 +56,14 @@ const SignUpForm = () => {
       <form onSubmit={handleSubmit}>
         <FormInput
           label="Name"
-          inputOptions={{
-            type: "text",
-            required: true,
-            onChange: handleChange,
-            name: "displayName",
-            value: displayName,
-          }}
+          type="text"
+          required
+          onChange={handleChange}
+          name="displayName"
+          value={displayName}
+          autoComplete="on"
         />
-
-        {/* <FormInput
+        <FormInput
           label="Email"
           type="email"
           required
@@ -74,7 +72,6 @@ const SignUpForm = () => {
           value={email}
           autoComplete="on"
         />
-
         <FormInput
           label="New Password"
           type="password"
@@ -84,7 +81,6 @@ const SignUpForm = () => {
           value={password}
           autoComplete="new-password"
         />
-
         <FormInput
           label="Confirm Password"
           type="password"
@@ -93,8 +89,7 @@ const SignUpForm = () => {
           name="confirmPassword"
           value={confirmPassword}
           autoComplete="new-password"
-        /> */}
-
+        />
         <button type="subimit">Sign Up</button>
       </form>
     </div>
