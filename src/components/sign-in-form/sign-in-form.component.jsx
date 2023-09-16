@@ -79,10 +79,12 @@ const SignInForm = () => {
           autoComplete="new-password"
         />
 
-        <Button type="subimit">Sign In</Button>
-        <Button onClick={signInWithGoogle} type="button" buttonType="google">
-          Google Sign In
-        </Button>
+        <div className="buttons-container ">
+          <Button type="subimit">Sign In</Button>
+          <Button onClick={signInWithGoogle} type="button" buttonType="google">
+            Google Sign In
+          </Button>
+        </div>
       </form>
     </div>
   );
